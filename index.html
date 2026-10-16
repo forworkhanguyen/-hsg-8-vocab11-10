@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[ÔN HSG 8] VOCABULARY PRACTICE 11/10</title>
+<style>
+:root{--ink:#24304a;--purple:#7057d9;--pink:#ff6fae;--mint:#52d6b2;--yellow:#ffd66b}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 10%,#ffe3ef 0,transparent 27%),radial-gradient(circle at 90% 20%,#d9f8f0 0,transparent 25%),linear-gradient(135deg,#f7f4ff,#fffaf0);min-height:100vh}
+.wrap{max-width:1000px;margin:auto;padding:22px}
+.hero{text-align:center;padding:22px 16px 16px}
+.pill{display:inline-block;background:#fff;border:2px solid #eee5ff;border-radius:999px;padding:7px 14px;font-weight:800;color:var(--purple);font-size:.86rem}
+h1{font-size:clamp(1.7rem,4vw,2.7rem);margin:12px 0 7px;line-height:1.15}
+h1 span{color:var(--purple)}
+.hero p{margin:0 auto;max-width:650px;color:#5e6680}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.stat{background:#ffffffd9;border:1px solid #eee8ff;border-radius:16px;padding:12px;text-align:center;box-shadow:0 5px 16px #5a4b9810}
+.stat strong{display:block;font-size:1.3rem}
+.stat small{color:#6b7187}
+.progress{height:10px;border-radius:99px;background:#e9e5f8;overflow:hidden;margin:10px 0 18px}
+.bar{height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink),var(--mint));transition:width .3s}
+.card{background:#ffffffed;border:2px solid #eee9ff;border-radius:26px;padding:clamp(18px,4vw,34px);box-shadow:0 15px 40px #493c8014;position:relative;overflow:hidden}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.round{background:#eee9ff;color:#5b43c4;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.85rem}
+.number{font-weight:800;color:#8a8fa5}
+.emoji{text-align:center;font-size:3.2rem;margin:12px 0 3px}
+.prompt{text-align:center;font-size:clamp(1.3rem,3vw,2rem);font-weight:850;margin:8px 0;overflow-wrap:anywhere}
+.sub{text-align:center;color:#69718a;margin:0 0 18px}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+.option{border:2px solid #e9e5f5;border-radius:15px;padding:12px;background:#fff;text-align:left;font-weight:750;color:var(--ink);cursor:pointer;transition:.15s}
+.option:hover{border-color:var(--purple);transform:translateY(-2px)}
+.option.selected{border-color:var(--purple);background:#f2efff}
+.option:disabled{cursor:default;opacity:.85}
+.answerline{display:flex;gap:9px;margin:16px auto 10px;max-width:650px}
+.answerline input{flex:1;min-width:0;padding:14px 15px;border:2px solid #ded8f4;border-radius:14px;font:inherit;font-size:1rem;outline:none}
+.answerline input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #7057d91c}
+button{font:inherit}
+.btn{border:0;border-radius:14px;padding:12px 17px;font-weight:850;cursor:pointer;transition:.15s}
+.primary{background:var(--purple);color:#fff;box-shadow:0 5px 0 #4e3aa8}
+.primary:hover{transform:translateY(-1px)}
+.secondary{background:#f0edff;color:#5b43c4}
+.audio{background:#e0fbf3;color:#13765e}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.feedback{min-height:54px;margin:14px auto 0;max-width:700px;border-radius:16px;padding:12px 15px;font-weight:750;text-align:center;display:none}
+.feedback.good{display:block;background:#e3fff5;color:#11694f;border:1px solid #b5f2dc}
+.feedback.bad{display:block;background:#fff0f3;color:#a52f53;border:1px solid #ffd0dc}
+.feedback.info{display:block;background:#fff8df;color:#775711;border:1px solid #ffe8a0}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.hint{text-align:center;font-size:.88rem;color:#777e94;margin-top:12px}
+.start,.finish{text-align:center;padding:16px 6px}
+.start .big,.finish .big{font-size:4rem}
+.start h2,.finish h2{font-size:1.8rem;margin:8px}
+.start p,.finish p{max-width:650px;margin:8px auto 20px;color:#616983}
+.instructions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.instruction{background:#faf8ff;border-radius:16px;padding:14px}
+.instruction b{display:block;margin-bottom:5px}
+.hidden{display:none!important}
+.review{margin-top:18px;text-align:left;background:#faf9ff;padding:15px;border-radius:16px}
+.review summary{cursor:pointer;font-weight:850}
+.review ol{padding-left:22px;line-height:1.7}
+.tiny{font-size:.85rem;color:#7b8093}
+@media(max-width:600px){
+.wrap{padding:12px}
+.stats{grid-template-columns:repeat(2,1fr)}
+.options{grid-template-columns:1fr}
+.answerline{flex-direction:column}
+.instructions{grid-template-columns:1fr}
+.card{border-radius:20px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+<div class="pill">🎓 ÔN HỌC SINH GIỎI LỚP 8 · VOCAB CHALLENGE</div>
+<h1>[ÔN HSG 8]<br><span>VOCABULARY PRACTICE 11/10</span></h1>
+<p>60 mục từ vựng · 2 vòng thử thách · Nghe, nhớ nghĩa và gõ thật chuẩn! 🚀</p>
+</header>
+
+<div class="stats">
+<div class="stat"><strong id="score">0</strong><small>⭐ Điểm</small></div>
+<div class="stat"><strong id="progressText">0/120</strong><small>📚 Tiến độ</small></div>
+<div class="stat"><strong id="streak">0</strong><small>🔥 Chuỗi đúng</small></div>
+<div class="stat"><strong id="accuracy">—</strong><small>🎯 Độ chính xác</small></div>
+</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+
+<main class="card">
+<section class="start" id="startScreen">
+<div class="big">🦊📚✨</div>
+<h2>Sẵn sàng chinh phục 60 mục từ?</h2>
+<p>Vòng 1: nhìn nghĩa tiếng Việt, xem 4 lựa chọn rồi <b>tự gõ từ tiếng Anh</b>.<br>
+Vòng 2: nghe phát âm Anh-Mỹ rồi gõ từ/cụm từ chính xác.<br>
+Trả lời sai? Game sẽ bật mí đáp án — hãy gõ lại đúng để tiếp tục nhé!</p>
+<div class="instructions">
+<div class="instruction">🧠 <b>Vòng 1 · Meaning</b><span class="tiny">Chọn gợi ý, sau đó nhập đáp án.</span></div>
+<div class="instruction">🎧 <b>Vòng 2 · Listening</b><span class="tiny">Nghe audio và viết đúng từ/cụm từ.</span></div>
+<div class="instruction">🏆 <b>Chinh phục</b><span class="tiny">Hoàn thành cả hai vòng để xem kết quả.</span></div>
+</div>
+<button class="btn primary" onclick="startGame()">Bắt đầu chơi nào! 🎮</button>
+<p class="tiny">Audio sử dụng giọng English (United States) có sẵn trên thiết bị/trình duyệt. Giọng cụ thể tùy hệ điều hành.</p>
+</section>
+
+<section id="gameScreen" class="hidden">
+<div class="topline">
+<span class="round" id="roundLabel">VÒNG 1 · NHỚ NGHĨA</span>
+<span class="number" id="questionNo">Câu 1/60</span>
+</div>
+<div class="emoji" id="emoji">🧠</div>
+<div class="prompt" id="prompt"></div>
+<p class="sub" id="subprompt"></p>
+<div class="options" id="options"></div>
+<div class="answerline">
+<input id="answer" autocomplete="off" spellcheck="false" placeholder="Gõ đáp án tiếng Anh tại đây..." aria-label="Gõ đáp án">
+<button class="btn primary" id="submitBtn" onclick="checkAnswer()">Kiểm tra ✓</button>
+</div>
+<div class="feedback" id="feedback" aria-live="polite"></div>
+<div class="actions">
+<button class="btn audio" id="audioBtn" onclick="playAudio()">🔊 Nghe lại</button>
+<button class="btn secondary" id="nextBtn" onclick="nextQuestion()" disabled>Tiếp tục ➜</button>
+</div>
+<p class="hint" id="hint">Gõ đúng cả cụm từ, kể cả khoảng trắng và dấu gạch nối khi có.</p>
+</section>
+
+<section id="finishScreen" class="finish hidden">
+<div class="big" id="finishEmoji">🏆</div>
+<h2 id="finishTitle">Hoàn thành thử thách!</h2>
+<p id="finishSummary"></p>
+<button class="btn primary" onclick="restartGame()">Chơi lại từ đầu 🔁</button>
+<button class="btn secondary" onclick="downloadResults()">Tải kết quả .txt 📥</button>
+<details class="review">
+<summary>📖 Xem lại toàn bộ 60 đáp án</summary>
+<ol id="answerReview"></ol>
+</details>
+</section>
+</main>
+<p class="hint">💡 Quy tắc chấm: không phân biệt chữ hoa/chữ thường; bỏ qua khoảng trắng thừa ở đầu/cuối.</p>
+</div>
+
+<script>
+const vocab = [
+{w:"trust",m:"tin tưởng; sự tin tưởng (= believe)",e:"🤝",a:["trust","doubt","cooperation","position"]},
+{w:"cooperation",m:"sự hợp tác",e:"🫱🏻‍🫲🏽",a:["cooperation","circumstance","capacity","achievement"]},
+{w:"scold",m:"mắng chửi",e:"😤",a:["complain about","scold","mention","repeat"]},
+{w:"suffer from",m:"chịu đựng / mắc phải điều gì đó",e:"🤒",a:["depend on","settle down","suffer from","experiment with"]},
+{w:"complain about",m:"phàn nàn về…",e:"🙄",a:["complain about","make use of something","go over","demand for"]},
+{w:"position",m:"chức vụ; vị trí",e:"📍",a:["potential","position","frontier","standard"]},
+{w:"mention",m:"đề cập; nhắc đến",e:"💬",a:["gather","mention","assemble","review"]},
+{w:"circumstance",m:"hoàn cảnh",e:"🌦️",a:["climate","curriculum","circumstance","necessity"]},
+{w:"strict",m:"nghiêm khắc",e:"👩‍🏫",a:["reasonable","sufficient","strict","old-fashioned"]},
+{w:"whenever",m:"mỗi khi",e:"⏰",a:["immediately","whenever","rapidly","original"]},
+{w:"rise",m:"tăng (= increase)",e:"📈",a:["rise","repeat","gather","supply"]},
+{w:"rapidly",m:"một cách nhanh chóng",e:"⚡",a:["sufficient","rapidly","initial","artificial"]},
+{w:"doubt",m:"nghi ngờ",e:"🤔",a:["trust","doubt","achieve","mention"]},
+{w:"immediately",m:"một cách ngay lập tức",e:"🚨",a:["rapidly","whenever","immediately","primary"]},
+{w:"depend on",m:"phụ thuộc vào (= rely on)",e:"🪢",a:["depend on","suffer from","complain about","experiment with"]},
+{w:"industries",m:"các nền công nghiệp",e:"🏭",a:["industries","circumstances","requirements","methods"]},
+{w:"reasonable",m:"hợp lý",e:"⚖️",a:["complicated","reasonable","strict","old-fashioned"]},
+{w:"settle down",m:"ổn định; an cư",e:"🏡",a:["go over","settle down","cram for","make use of something"]},
+{w:"shelter",m:"chỗ trú ẩn",e:"⛺",a:["supply","shelter","position","frontier"]},
+{w:"method",m:"phương pháp",e:"🧪",a:["method","climate","capacity","curriculum"]},
+{w:"sufficient",m:"đầy đủ (trái nghĩa: insufficient)",e:"✅",a:["potential","sufficient","primary","artificial"]},
+{w:"demand for",m:"nhu cầu về; đòi hỏi",e:"📣",a:["request","demand for","supply","cooperation"]},
+{w:"old-fashioned",m:"lỗi thời",e:"📻",a:["original","old-fashioned","complicated","reasonable"]},
+{w:"complicated",m:"phức tạp",e:"🧩",a:["complicated","primary","initial","sufficient"]},
+{w:"cultivate",m:"trồng; nuôi dưỡng",e:"🌱",a:["gather","cultivate","assemble","amass"]},
+{w:"climate",m:"khí hậu",e:"🌤️",a:["circumstance","climate","shelter","distance learning"]},
+{w:"original",m:"ban đầu; gốc",e:"🧬",a:["initial","original","artificial","standard"]},
+{w:"initial",m:"lúc ban đầu",e:"🔰",a:["primary","initial","original","the latter"]},
+{w:"assemble",m:"lắp ráp; tập hợp",e:"🧰",a:["amass","gather","assemble","achieve"]},
+{w:"amass",m:"tích luỹ",e:"💰",a:["amass","assemble","supply","cultivate"]},
+{w:"achieve",m:"đạt được (= gain)",e:"🏅",a:["achieve","review","repeat","requirement"]},
+{w:"experiment with",m:"trải nghiệm/thử điều gì đó mới",e:"🧪",a:["depend on","experiment with","suffer from","make use of something"]},
+{w:"request",m:"yêu cầu; lời yêu cầu",e:"🙋",a:["requirement","request","demand for","necessity"]},
+{w:"necessity",m:"sự cần thiết; đồ thiết yếu",e:"🧻",a:["necessity","achievement","capacity","potential"]},
+{w:"primary",m:"sơ khai; đầu tiên",e:"🥇",a:["initial","original","primary","artificial"]},
+{w:"supply",m:"nguồn cung; cung cấp",e:"📦",a:["demand for","supply","request","shelter"]},
+{w:"requirement",m:"sự yêu cầu; điều kiện cần",e:"📋",a:["requirement","revision","curriculum","cooperation"]},
+{w:"gather",m:"thu thập (= collect)",e:"🧺",a:["assemble","gather","amass","cultivate"]},
+{w:"miss the point",m:"không hiểu / hiểu sai vấn đề",e:"🎯",a:["miss the point","go over","make use of something","complain about"]},
+{w:"capacity",m:"sức chứa",e:"🫙",a:["ability","capacity","potential","achievement"]},
+{w:"ability",m:"khả năng",e:"💪",a:["capacity","achievement","ability","potential"]},
+{w:"achievement",m:"thành tựu",e:"🏆",a:["potential","ability","achievement","necessity"]},
+{w:"potential",m:"tiềm năng",e:"🌟",a:["potential","position","capacity","ability"]},
+{w:"cram for",m:"học nhồi nhét (trước kỳ thi)",e:"📚",a:["go over","cram for","self-study","review"]},
+{w:"lecture",m:"bài giảng",e:"🎤",a:["seminar","lecture","mock exam/mock test","curriculum"]},
+{w:"mock exam/mock test",m:"bài thi thử",e:"📝",a:["lecture","revision","mock exam/mock test","seminar"]},
+{w:"frontier",m:"biên giới; ranh giới",e:"🗺️",a:["position","frontier","circumstance","distance learning"]},
+{w:"the latter",m:"cái thứ hai / người sau trong hai lựa chọn",e:"☕",a:["the latter","the former","original","initial"]},
+{w:"seminar",m:"hội thảo",e:"👥",a:["lecture","curriculum","seminar","mock exam/mock test"]},
+{w:"curriculum",m:"chương trình học",e:"📘",a:["revision","curriculum","lecture","requirement"]},
+{w:"go over",m:"kiểm tra lại; xem xét lại",e:"🔍",a:["go over","review","repeat","make use of something"]},
+{w:"plagiarise",m:"đạo văn",e:"🚫",a:["plagiarise","review","repeat","gather"]},
+{w:"repeat",m:"lặp lại",e:"🔁",a:["review","repeat","revise","mention"]},
+{w:"make use of something",m:"tận dụng / sử dụng hiệu quả cái gì đó",e:"🛠️",a:["depend on","make use of something","experiment with","go over"]},
+{w:"review",m:"đánh giá lại; xem xét lại",e:"🧐",a:["revision","review","repeat","go over"]},
+{w:"revision",m:"sự ôn tập",e:"🗂️",a:["review","lecture","revision","curriculum"]},
+{w:"distance learning",m:"học từ xa",e:"💻",a:["self-study","distance learning","curriculum","seminar"]},
+{w:"self-study",m:"sự tự học",e:"🧑‍💻",a:["self-study","distance learning","revision","lecture"]},
+{w:"standard",m:"tiêu chuẩn; thuộc tiêu chuẩn",e:"📏",a:["standard","strict","reasonable","sufficient"]},
+{w:"artificial",m:"nhân tạo",e:"🤖",a:["original","artificial","initial","primary"]}
+];
+
+const icons=["🦊","🐼","🦄","🐸","🐯","🐙","🦋","🐣","🦖","🐳"];
+let round=1,idx=0,score=0,streak=0,bestStreak=0;
+let attempts=0,correctFirst=0,locked=false,roundItems=[],history=[];
+
+const $=id=>document.getElementById(id);
+function norm(s){return s.toLowerCase().trim().replace(/\s+/g," ");}
+function shuffle(arr){
+ let a=[...arr];
+ for(let i=a.length-1;i>0;i--){
+  let j=Math.floor(Math.random()*(i+1));
+  [a[i],a[j]]=[a[j],a[i]];
+ }
+ return a;
+}
+
+function startGame(){
+ $("startScreen").classList.add("hidden");
+ $("finishScreen").classList.add("hidden");
+ $("gameScreen").classList.remove("hidden");
+ round=1;idx=0;score=0;streak=0;bestStreak=0;
+ attempts=0;correctFirst=0;history=[];
+ roundItems=shuffle(vocab);
+ updateStats();renderQuestion();
+}
+function restartGame(){startGame();}
+
+function updateStats(){
+ $("score").textContent=score;
+ $("progressText").textContent=Math.min(idx+(round-1)*60,120)+"/120";
+ $("streak").textContent=streak;
+ $("accuracy").textContent=attempts?Math.round(correctFirst/attempts*100)+"%":"—";
+ $("bar").style.width=((round-1)*50+(idx/60)*50)+"%";
+}
+
+function renderQuestion(){
+ locked=false;
+ let item=roundItems[idx];
+ $("roundLabel").textContent=round===1?"VÒNG 1 · NHỚ NGHĨA":"VÒNG 2 · NGHE & GÕ";
+ $("questionNo").textContent="Câu "+(idx+1)+"/60";
+ $("emoji").textContent=round===1?item.e:icons[idx%icons.length];
+ $("prompt").textContent=round===1?item.m:"Nghe và viết lại từ/cụm từ";
+ $("subprompt").textContent=round===1
+  ?"Chọn một gợi ý trong 4 đáp án, rồi tự gõ từ tiếng Anh."
+  :"Bấm “Nghe từ” để nghe phát âm tiếng Anh-Mỹ.";
+
+ $("options").innerHTML="";
+ $("options").classList.toggle("hidden",round!==1);
+
+ if(round===1){
+  shuffle(item.a).forEach((opt,i)=>{
+   let b=document.createElement("button");
+   b.className="option";
+   b.textContent=String.fromCharCode(65+i)+". "+opt;
+   b.onclick=()=>{
+    if(locked)return;
+    document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));
+    b.classList.add("selected");
+    $("answer").focus();
+   };
+   $("options").appendChild(b);
+  });
+ }
+
+ $("answer").value="";
+ $("answer").disabled=false;
+ $("answer").placeholder="Gõ đáp án tiếng Anh tại đây...";
+ $("submitBtn").disabled=false;
+ $("submitBtn").textContent="Kiểm tra ✓";
+ $("feedback").className="feedback";
+ $("feedback").textContent="";
+ $("nextBtn").disabled=true;
+ $("nextBtn").textContent="Tiếp tục ➜";
+ $("audioBtn").textContent=round===1?"🔊 Nghe từ (tuỳ chọn)":"🎧 Nghe từ";
+ $("hint").textContent=round===1
+  ?"Chọn đáp án để làm gợi ý, nhưng vẫn phải tự gõ từ vào ô."
+  :"Nghe kỹ, chú ý chính tả và các cụm có khoảng trắng/dấu gạch nối.";
+
+ updateStats();
+ if(round===2)playAudio();
+}
+
+function playAudio(){
+ const item=roundItems[idx];
+ if(!("speechSynthesis" in window)){
+  showFeedback("Trình duyệt này chưa hỗ trợ đọc văn bản. Hãy thử Chrome hoặc Edge.","info");
+  return;
+ }
+ speechSynthesis.cancel();
+ const utter=new SpeechSynthesisUtterance(item.w);
+ utter.lang="en-US";
+ utter.rate=.84;
+ utter.pitch=1.02;
+ const voices=speechSynthesis.getVoices();
+ const us=voices.find(v=>/^en-US$/i.test(v.lang))
+  ||voices.find(v=>/^en-US/i.test(v.lang))
+  ||voices.find(v=>/United States/i.test(v.name));
+ if(us)utter.voice=us;
+ speechSynthesis.speak(utter);
+}
+
+function showFeedback(msg,type){
+ $("feedback").textContent=msg;
+ $("feedback").className="feedback "+type;
+}
+
+function checkAnswer(){
+ if(locked)return;
+ let item=roundItems[idx];
+ let typed=norm($("answer").value);
+ if(!typed){
+  showFeedback("✍️ Bạn hãy gõ đáp án trước nhé!","info");
+  return;
+ }
+ attempts++;
+ if(typed===norm(item.w)){
+  locked=true;
+  correctFirst++;
+  score+=10;
+  streak++;
+  bestStreak=Math.max(bestStreak,streak);
+  showFeedback("🎉 Chính xác! +10 điểm. Giỏi lắm!","good");
+  $("answer").disabled=true;
+  $("submitBtn").disabled=true;
+  $("nextBtn").disabled=false;
+  $("nextBtn").textContent=idx===59
+   ?(round===1?"Sang vòng 2 🚀":"Xem kết quả 🏆")
+   :"Tiếp tục ➜";
+  history.push({round,w:item.w,correct:true,typed});
+ }else{
+  streak=0;
+  showFeedback("💡 Đáp án đúng là “"+item.w+"”. Hãy gõ lại chính xác để tiếp tục nhé!","bad");
+  $("answer").value="";
+  $("answer").placeholder="Gõ lại: "+item.w;
+  $("answer").focus();
+  $("nextBtn").disabled=true;
+  history.push({round,w:item.w,correct:false,typed});
+ }
+ updateStats();
+}
+
+function nextQuestion(){
+ if(!locked)return;
+ if(idx<59){
+  idx++;
+  renderQuestion();
+  return;
+ }
+ if(round===1){
+  round=2;idx=0;
+  roundItems=shuffle(vocab);
+  renderQuestion();
+  return;
+ }
+ finishGame();
+}
+
+function finishGame(){
+ $("gameScreen").classList.add("hidden");
+ $("finishScreen").classList.remove("hidden");
+ $("bar").style.width="100%";
+ $("progressText").textContent="120/120";
+ const pct=Math.round(correctFirst/attempts*100)||0;
+ $("finishEmoji").textContent=score>=1000?"🏆":score>=750?"🥳":"💪";
+ $("finishTitle").textContent=score>=1000
+  ?"Đỉnh quá! Vocabulary Master!"
+  :score>=750
+  ?"Rất tốt! Tiếp tục phát huy nhé!"
+  :"Hoàn thành thử thách!";
+ $("finishSummary").innerHTML=
+  "Điểm: <b>"+score+"</b> / 1200 · Tỉ lệ đúng ngay lần đầu: <b>"+pct+
+  "%</b> · Chuỗi đúng tốt nhất: <b>"+bestStreak+
+  "</b><br>Hãy ôn lại các từ còn nhầm và chơi lại để đạt điểm cao hơn nhé!";
+ $("answerReview").innerHTML="";
+ vocab.forEach((v,i)=>{
+  let li=document.createElement("li");
+  li.textContent=v.w+" — "+v.m;
+  $("answerReview").appendChild(li);
+ });
+ updateStats();
+}
+
+function downloadResults(){
+ const lines=[
+  "[ÔN HSG 8] VOCABULARY PRACTICE 11/10",
+  "Điểm: "+score+"/1200",
+  "Tỉ lệ đúng ngay lần đầu: "+(Math.round(correctFirst/attempts*100)||0)+"%",
+  "",
+  "ĐÁP ÁN ÔN TẬP",
+  ...vocab.map((v,i)=>(i+1)+". "+v.w+" — "+v.m)
+ ];
+ const blob=new Blob(["\ufeff"+lines.join("\n")],{type:"text/plain;charset=utf-8"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="Vocabulary_Practice_11-10_results.txt";
+ a.click();
+ URL.revokeObjectURL(url);
+}
+
+$("answer").addEventListener("keydown",e=>{
+ if(e.key==="Enter"){
+  if(!$("nextBtn").disabled&&locked)nextQuestion();
+  else checkAnswer();
+ }
+});
+if("speechSynthesis" in window){
+ speechSynthesis.onvoiceschanged=()=>{};
+}
+</script>
+</body>
+</html>
